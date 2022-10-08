@@ -1,10 +1,9 @@
 import React from "react";
 import "./CourseSection.scss";
 import Course from "../Course/Course";
-import useCourses from "../../hooks/useCourses";
+import courses from "../../courseData/courseData.json"
 
 const CourseSection = () => {
-   const [courses] = useCourses();
 
    return (
       <div className="course-section">
