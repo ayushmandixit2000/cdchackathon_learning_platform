@@ -9,7 +9,7 @@ const FeatureSection = () => {
       <div className="feature-section">
          <div className="container">
             <div className="header-text text-center">
-               <h3>Why dvelop on cronosLearn?</h3>
+               <h3>Why develop on cronosLearn?</h3>
                <p>Build your dream project with us.</p>
             </div>
             <div className="row">
