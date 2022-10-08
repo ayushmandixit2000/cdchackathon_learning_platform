@@ -1,10 +1,8 @@
 import React from "react";
-import useCourses from "../../hooks/useCourses";
 import Course from "../Course/Course";
-import courses from "../../courseData/courseData.json"
-
+import useCourses from "../../hooks/useCourses";
 const CoursePage = () => {
-   // const [courses] = useCourses();
+   const [courses] = useCourses();
 
    return (
       <div className="courses course-page">
