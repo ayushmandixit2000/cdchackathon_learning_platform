@@ -2,7 +2,7 @@ import React from "react";
 import { Switch, Route, Link, useRouteMatch } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faThLarge, faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
-import NotFound from "../../NotFound/NotFound";
+import NotFound from "../../DevCom/DevCom";
 import TopHeader from "../TopHeader/TopHeader";
 import useAuth from "../../../hooks/useAuth";
 import "./Dashboard.scss";

@@ -1,8 +1,9 @@
 import React from "react";
-import "./Cart.scss";
+import "./Community.scss";
+import contact from "../../images/undraw_researching_22gp.svg";
 import { useForm } from "react-hook-form";
 
-const Cart = () => {
+const Community = () => {
    const {
       register,
       handleSubmit,
@@ -15,7 +16,7 @@ const Cart = () => {
    };
 
    return (
-      <div className="cart">
+      <div className="Community">
          <div className="container">
             <div className="row align-items-center">
                <div className="col-lg-6 mb-5 mb-lg-0 pe-lg-5">
@@ -83,5 +84,4 @@ const Cart = () => {
    );
 };
 
-export default Cart;
-
+export default Community;

@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import About from "./components/About/About";
 import Header from "./components/Header/Header";
-import NotFound from "./components/NotFound/NotFound";
+import DevCom from "./components/DevCom/DevCom";
 import Main from "./components/Main/Main";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
@@ -57,6 +57,9 @@ function App() {
                      <Route path="/register">
                         <Register />
                      </Route>
+                     <Route path="/devcom">
+                        <DevCom />
+                     </Route>
                      <PrivateRoute path="/cart">
                         <Cart />
                      </PrivateRoute>
@@ -64,7 +67,7 @@ function App() {
                         <Dashboard />
                      </PrivateRoute>
                      <Route path="*">
-                        <NotFound />
+                        <Main />
                      </Route>
                   </Switch>
                   <Footer />

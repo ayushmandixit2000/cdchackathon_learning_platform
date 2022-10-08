@@ -21,7 +21,7 @@ const Root = () => {
   
     if (isAuthenticated) return (
         <button
-          className="btn-grey"
+          className="btn-black"
         >
           Connected
         </button>

@@ -52,6 +52,11 @@ const Header = () => {
                         Contact
                      </Link>
                   </li>
+                  <li className="nav-item">
+                     <Link className="link" to="/devcom">
+                        Developers Community
+                     </Link>
+                  </li>
                   
                   
                </ul>
@@ -65,15 +70,9 @@ const Header = () => {
                   </li>
                ) : (
                   <li>
-                     <Link className="link" to="/login">
-                        <img src={userIcon} alt="" />
-                     </Link>
                   </li>
                )}
                <li>
-                  <Link className="link" to="/cart">
-                     <img src={cartIcon} alt="" />
-                  </Link>
                </li>
                <li>
                   <Root />
@@ -82,7 +81,7 @@ const Header = () => {
                {isAuthenticated && (
                   <button
                      onClick={doLogout}
-                     className="btn-grey"
+                     className="btn-black"
                   >
                      Logout
                   </button>

@@ -161,7 +161,7 @@ const CourseDetails = () => {
                         <img className="img-fluid" src={image} alt="" />
                      </div>
                      <div className="info-box">
-                        <h4 className="price">${price}</h4>
+                        <h4 className="price">Upload a snippet of your code!{price}</h4>
                         {isInitialized && isAuthenticated ? (
                            <form
                               onSubmit={onSubmit}
@@ -169,30 +169,34 @@ const CourseDetails = () => {
                            >
 
                               <div>
+                              
                               <input
                                  type="text"
-                                 className="border-[1px] p-2 text-lg border-black w-full"
+                                 className="border-x-4 rounded border p-2 text-lg border-black"
                                  value={name}
-                                 placeholder="Name"
+                                 placeholder="Project Name"
                                  onChange={(e) => setName(e.target.value)}
                               />
                               </div>
                               <div className="mt-3">
                               <input
                                  type="text"
-                                 className="border-[1px] p-2 text-lg border-black w-full"
+                                 className="rounded border p-2 text-lg border-black"
                                  value={nftDescription}
                                  placeholder="Description"
                                  onChange={(e) => setDescription(e.target.value)}
                               />
                               </div>
+                              
                               <div className="mt-3">
                               <input
                                  type="file"
-                                 className="border-[1px] p-2 text-lg border-black"
+                                 className="border-[1px] p-0 text-lg border-black"
                                  onChange={(e) => setFile(e.target.files[0])}
+                           
                               />
                               </div>
+                           
                               <button type="submit" className="btn-black">
                                  Claim your NFT
                               </button>
