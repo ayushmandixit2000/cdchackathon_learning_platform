@@ -28,19 +28,7 @@ function App() {
    }, []);
 
    return (
-      <AuthProvider>
-         {loading ? (
-            <div className="home-pre-loader">
-               <div className="d-flex justify-content-center align-items-center">
-                  <SyncLoader
-                     className="syncloader"
-                     color={"#2f2d52"}
-                     loading={loading}
-                     size={20}
-                  />
-               </div>
-            </div>
-         ) : (
+
             <>
                <Router>
                   <Header />
@@ -82,12 +70,9 @@ function App() {
                   <Footer />
                </Router>
             </>
-         )}
-      </AuthProvider>
+      
    );
 }
 
 export default App;
 
-// code link: https://github.com/ProgrammingHeroWC4/review-website-googlermridul
-// live link: https://skolaa.netlify.app/
