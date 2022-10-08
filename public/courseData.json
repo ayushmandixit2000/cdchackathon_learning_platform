@@ -1,10 +1,10 @@
 [
    {
       "_id" : 1,
-      "title": "Python",
-      "category": "Software Engineering",
-      "duration": "4h 5m",
-      "lessons": 14,
+      "title": "Cronos Authentication",
+      "category": "Blockchain development",
+      "duration": "3m 46s",
+      "lessons": 1,
       "price": 415,
       "rating": 4,
       "review": 10,

@@ -44,6 +44,7 @@ const CourseDetails = () => {
       instructor,
       instructorImage,
       language,
+      video,
    } = courses[courseId];
 
    const onSubmit = (data) => {
@@ -110,7 +111,9 @@ const CourseDetails = () => {
                         <div className="indicator-details">
                            <h4>Course Description</h4>
                            <p>{description}</p>
+                           <iframe width="560" height="315" src={video} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
+                        
                      </div>
                   </div>
                </div>
@@ -120,14 +123,14 @@ const CourseDetails = () => {
                         <img className="img-fluid" src={image} alt="" />
                      </div>
                      <div className="info-box">
-                        <h4 className="price">${price}</h4>
                         {user?.email ? (
                            <form
                               onSubmit={handleSubmit(onSubmit)}
                               className="mb-0 text-start"
                            >
                               <button type="submit" className="btn-black">
-                                 buy this course
+                                 Course Completed
+                                 {/* to link to profile page */}
                               </button>
                            </form>
                         ) : (
@@ -135,7 +138,7 @@ const CourseDetails = () => {
                               onClick={() => history.push("/login")}
                               className="btn-black"
                            >
-                              buy this course
+                              Course Completed
                            </button>
                         )}
                         <ul>
@@ -197,6 +200,7 @@ const CourseDetails = () => {
          </div>
       </div>
    );
+   
 };
 
 export default CourseDetails;

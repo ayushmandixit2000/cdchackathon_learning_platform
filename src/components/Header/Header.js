@@ -14,7 +14,7 @@ const Header = () => {
       <nav className="navbar navbar-expand-md fixed-top">
          <div className="container">
             <Link className="link" to="/home">
-               <h3 className="logo">cronosLearn</h3>
+            <img className="img" src="https://i.ibb.co/FbvXCwH/Screenshot-2022-10-08-at-10-57-17-PM.png" width ="200" height ="" />
             </Link>
             <div
                className="collapse navbar-collapse"

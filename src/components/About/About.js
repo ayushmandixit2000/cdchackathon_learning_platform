@@ -10,26 +10,22 @@ const About = () => {
             <div className="container">
                <div className="row align-items-center">
                   <div className="col-md-6 pe-md-5 mb-5 mb-md-0">
-                     <img className="img-fluid shadow" src={aboutImg} alt="" />
+                     <img className="img-fluid shadow" src="https://en.cryptonomist.ch/wp-content/uploads/2022/06/crypto-apple-pay-1140x600.jpeg" />
                   </div>
                   <div className="col-md-6">
                      <div className="about-info">
-                        <h3>Know About Us</h3>
+                        <h3>Know About The Cronos Network</h3>
                         <p>
-                           We provides more than 500 international courses to
-                           prove your skills. In this site you will get all
-                           quality courses. We have the best expertise to guide
-                           you.
+                        First EVM-compatible chain built on Cosmos
                         </p>
                         <ul>
-                           <li>Creative Study Pattern</li>
-                           <li>Quick Crash Courses</li>
-                           <li>Certification Awarded</li>
-                           <li>Provided with Experimental Examples</li>
+                           <li>Easy Portability: An easy-to-use platform to rapidly port apps from Ethereum and EVM-compatible chains</li>
+                           <li>Funding: The CRO EVM Fund grants up to USD 1 million per project</li>
+                           <li>User Base: Access to our rapidly-growing global user base of over 10 million </li>
+                           <li>EVM compatible: Built on Ethermint, which supports rapid porting of apps & smart contracts from Ethereum and other EVM-compatible chains.</li>
                         </ul>
                         <p>
-                           Lorem ipsum dolor sit amet consectetur adipisicing
-                           elit. Veniam, dignissimos.
+                        Get Instant DApp Portability with EVM Support
                         </p>
                      </div>
                   </div>

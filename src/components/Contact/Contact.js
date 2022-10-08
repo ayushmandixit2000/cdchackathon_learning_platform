@@ -20,7 +20,7 @@ const Contact = () => {
          <div className="container">
             <div className="row align-items-center">
                <div className="col-lg-6 mb-5 mb-lg-0 pe-lg-5">
-                  <img className="img-fluid" src={contact} alt="" />
+                  <img className="img-fluid" src="https://img.freepik.com/premium-vector/cronos-cro-token-symbol-dark-blue-polygonal-background-cryptocom-cryptocurrency-logo-icon-website-banner_337410-1864.jpg?w=2000" />
                </div>
                <div className="col-lg-6 ps-lg-5">
                   <div className="px-lg-3">
