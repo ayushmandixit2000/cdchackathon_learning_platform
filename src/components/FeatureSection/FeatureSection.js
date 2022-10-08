@@ -18,9 +18,9 @@ const FeatureSection = () => {
                      <div className="icon">
                         <img src={icon1} alt="" />
                      </div>
-                     <h5>Learn Anything</h5>
+                     <h5>Learn Web3</h5>
                      <p>
-                        A range of courses across gardening, <br /> photography
+                        A range of courses across NFTS, <br /> DApp development
                         and more.
                      </p>
                   </div>
@@ -32,7 +32,7 @@ const FeatureSection = () => {
                      </div>
                      <h5>Flexible Learning</h5>
                      <p>
-                        Knowledge discovery that helps you <br /> understand any
+                        Knowledge at your own pace, <br /> understand any
                         topic.
                      </p>
                   </div>
@@ -42,10 +42,9 @@ const FeatureSection = () => {
                      <div className="icon icon3">
                         <img src={icon3} alt="" />
                      </div>
-                     <h5>Learn With Experts</h5>
+                     <h5>Learn With the Community</h5>
                      <p>
-                        Experts delivered you the best support <br /> regarding
-                        your need.
+                        Post your questions <br /> get help from the community
                      </p>
                   </div>
                </div>
