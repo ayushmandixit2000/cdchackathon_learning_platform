@@ -1,7 +1,6 @@
 import React from "react";
-import useCourses from "../../hooks/useCourses";
 import Course from "../Course/Course";
-
+import useCourses from "../../hooks/useCourses";
 const CoursePage = () => {
    const [courses] = useCourses();
 
