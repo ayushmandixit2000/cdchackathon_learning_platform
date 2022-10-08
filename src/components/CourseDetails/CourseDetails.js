@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Rating from "react-rating";
-import useAuth from "../../hooks/useAuth";
+// import useAuth from "../../hooks/useAuth";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
    faBookOpen,
@@ -15,21 +15,24 @@ import courses from "../../courseData/courseData.json"
 import { useParams } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import Moralis from "moralis";
+import { useMoralis } from "react-moralis";
+import { contractABI, contractAddress } from "../contract";
+import Web3 from "web3";
 
+const web3 = new Web3(Web3.givenProvider);
 const CourseDetails = () => {
    // const [courses] = useCourses();
    // const [details, setDetails] = useState({});
    const { handleSubmit, reset } = useForm();
    const { courseId } = useParams();
-   const { user } = useAuth();
+   // const { user } = useAuth();
    const history = useHistory();
+   const { isInitialized, isAuthenticated, logout, user } = useMoralis();
+   const [name, setName] = useState("");
+   const [nftDescription, setDescription] = useState("");
+   const [file, setFile] = useState(null);
 
-   // useEffect(() => {
-   //    if (courses.length) {
-   //       const matchedData = courses.find((course) => course._id === courseId);
-   //       setDetails(matchedData);
-   //    }
-   // }, [courses,courseId]);
 
    const {
       title,
@@ -47,29 +50,64 @@ const CourseDetails = () => {
       video,
    } = courses[courseId];
 
-   const onSubmit = (data) => {
-      data.image = image;
-      data.title = title;
-      data.price = price;
-      data.email = user.email;
-      data.quantity = 1;
+   // const onSubmit = (data) => {
+   //    data.image = image;
+   //    data.title = title;
+   //    data.price = price;
+   //    data.address = user.get("ethAddress");
+   //    data.quantity = 1;
 
-      fetch(`https://polar-lake-68435.herokuapp.com/addCartOrder`, {
-         method: "POST",
-         headers: { "Content-Type": "application/json" },
-         body: JSON.stringify(data),
-      })
-         .then((res) => res.json())
-         .then((result) => {
-            if (result.insertedId) {
-               history.push("/cart");
-               reset();
-            } else {
-               history.push("/login");
-            }
-         });
-      console.log(data);
-   };
+   //    fetch(`https://polar-lake-68435.herokuapp.com/addCartOrder`, {
+   //       method: "POST",
+   //       headers: { "Content-Type": "application/json" },
+   //       body: JSON.stringify(data),
+   //    })
+   //       .then((res) => res.json())
+   //       .then((result) => {
+   //          if (result.insertedId) {
+   //             history.push("/cart");
+   //             reset();
+   //          } else {
+   //             history.push("/login");
+   //          }
+   //       });
+   //    console.log(data);
+   // };
+
+   const onSubmit = async (e) => {
+      e.preventDefault();
+      try {
+        // Attempt to save image to IPFS
+        const file1 = new Moralis.File(file.name,file);
+        await file1.saveIPFS();
+        const file1url = file1.ipfs();
+        // Generate metadata and save to IPFS
+        const metadata = {
+          name,
+          nftDescription,
+          image: file1url,
+        };
+        const file2 = new Moralis.File(`metadata.json`, {
+          base64: Buffer.from(JSON.stringify(metadata)).toString("base64"),
+        });
+        await file2.saveIPFS();
+        const metadataurl = file2.ipfs();
+        // Interact with smart contract
+        const contract = new web3.eth.Contract(contractABI, contractAddress);
+        const response = await contract.methods
+          .mint(metadataurl)
+          .send({ from: user.get("ethAddress") });
+        // Get token id
+        const tokenId = response.events.Transfer.returnValues.tokenId;
+        // Display alert
+        alert(
+          `NFT successfully minted. Contract address - ${contractAddress} and Token ID - ${tokenId}`
+        );
+      } catch (err) {
+        console.error(err);
+        alert("An error occured!");
+      }
+    };
 
    return (
       <div className="details-section">
@@ -123,14 +161,40 @@ const CourseDetails = () => {
                         <img className="img-fluid" src={image} alt="" />
                      </div>
                      <div className="info-box">
-                        {user?.email ? (
+                        <h4 className="price">${price}</h4>
+                        {isInitialized && isAuthenticated ? (
                            <form
-                              onSubmit={handleSubmit(onSubmit)}
+                              onSubmit={onSubmit}
                               className="mb-0 text-start"
                            >
+
+                              <div>
+                              <input
+                                 type="text"
+                                 className="border-[1px] p-2 text-lg border-black w-full"
+                                 value={name}
+                                 placeholder="Name"
+                                 onChange={(e) => setName(e.target.value)}
+                              />
+                              </div>
+                              <div className="mt-3">
+                              <input
+                                 type="text"
+                                 className="border-[1px] p-2 text-lg border-black w-full"
+                                 value={nftDescription}
+                                 placeholder="Description"
+                                 onChange={(e) => setDescription(e.target.value)}
+                              />
+                              </div>
+                              <div className="mt-3">
+                              <input
+                                 type="file"
+                                 className="border-[1px] p-2 text-lg border-black"
+                                 onChange={(e) => setFile(e.target.files[0])}
+                              />
+                              </div>
                               <button type="submit" className="btn-black">
-                                 Course Completed
-                                 {/* to link to profile page */}
+                                 Claim your NFT
                               </button>
                            </form>
                         ) : (
@@ -138,7 +202,7 @@ const CourseDetails = () => {
                               onClick={() => history.push("/login")}
                               className="btn-black"
                            >
-                              Course Completed
+                              Enroll
                            </button>
                         )}
                         <ul>

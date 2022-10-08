@@ -1,5 +1,5 @@
 {
-   "name": "edumodo",
+   "name": "learnearn",
    "version": "0.1.0",
    "private": true,
    "dependencies": {
@@ -12,16 +12,19 @@
       "bootstrap": "^5.1.3",
       "dotenv": "^14.3.2",
       "firebase": "^9.6.4",
-      "react": "^17.0.2",
+      "moralis": "^1.5.11",
+      "react": "^18.0.0",
       "react-bootstrap": "^2.0.0",
       "react-dom": "^17.0.2",
       "react-hook-form": "^7.25.1",
+      "react-moralis": "^1.4.2",
       "react-rating": "^2.0.5",
       "react-router-dom": "^5.3.0",
       "react-scripts": "4.0.3",
       "react-spinners": "^0.11.0",
       "sass": "^1.49.0",
-      "web-vitals": "^1.1.2"
+      "web-vitals": "^1.1.2",
+      "web3": "^1.8.0"
    },
    "scripts": {
       "start": "react-scripts start",
