@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import Rating from "react-rating";
 // import useAuth from "../../hooks/useAuth";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -50,29 +51,6 @@ const CourseDetails = () => {
       video,
    } = courses[courseId];
 
-   // const onSubmit = (data) => {
-   //    data.image = image;
-   //    data.title = title;
-   //    data.price = price;
-   //    data.address = user.get("ethAddress");
-   //    data.quantity = 1;
-
-   //    fetch(`https://polar-lake-68435.herokuapp.com/addCartOrder`, {
-   //       method: "POST",
-   //       headers: { "Content-Type": "application/json" },
-   //       body: JSON.stringify(data),
-   //    })
-   //       .then((res) => res.json())
-   //       .then((result) => {
-   //          if (result.insertedId) {
-   //             history.push("/cart");
-   //             reset();
-   //          } else {
-   //             history.push("/login");
-   //          }
-   //       });
-   //    console.log(data);
-   // };
 
    const onSubmit = async (e) => {
       e.preventDefault();
@@ -149,7 +127,7 @@ const CourseDetails = () => {
                         <div className="indicator-details">
                            <h4>Course Description</h4>
                            <p>{description}</p>
-                           <iframe width="560" height="315" src={video} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                           <iframe width="840" height="472.5" src={video} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                         
                      </div>
@@ -161,6 +139,9 @@ const CourseDetails = () => {
                         <img className="img-fluid" src={image} alt="" />
                      </div>
                      <div className="info-box">
+                     <button className="btn-black">
+                                 Enroll
+                                 </button>
                         <h4 className="price">Upload a snippet of your code!{price}</h4>
                         {isInitialized && isAuthenticated ? (
                            <form
@@ -195,15 +176,23 @@ const CourseDetails = () => {
                                  onChange={(e) => setFile(e.target.files[0])}
                            
                               />
+
+                                 <center>
+                                 <br></br>
+                                 <button className="btn-black" onClick="#0">
+                                 You can now redeem your NFT below!
+                                 </button>
+                                 
+                                 </center>
+
                               </div>
-                           
-                              <button type="submit" className="btn-black">
-                                 Claim your NFT
-                              </button>
+                              
+
+                              <iframe src="https://mint.zerocodenft.com/Tabs?siteId=b678c269-e659-4340-980b-08daa88b75e3" width="100%" height="500"></iframe>
                            </form>
+                           
                         ) : (
                            <button
-                              onClick={() => history.push("/login")}
                               className="btn-black"
                            >
                               Enroll
