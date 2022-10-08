@@ -1,0 +1,94 @@
+.login-section {
+   margin-top: 200px;
+   .form-box {
+      max-width: 500px;
+      // background: #f7f7f8;
+      // padding: 30px;
+      margin: auto;
+      h4 {
+         margin-bottom: 20px;
+         color: #2f2d52;
+         text-transform: capitalize;
+      }
+      .form-group {
+         margin-bottom: 20px;
+         label {
+            margin-bottom: 5px;
+            font-size: 16px;
+            color: #2f2d52;
+         }
+         .form-control {
+            border-radius: 3px;
+            color: #666;
+            height: 60px;
+            padding: 20px;
+            border: 1px solid #e5e5e5;
+            &:focus {
+               box-shadow: 0 0rem 0rem rgba(0, 0, 0, 0.15) !important;
+               border: 1px solid #2f2d52;
+            }
+         }
+      }
+      .google-btn {
+         width: 100%;
+         margin-bottom: 20px;
+         background: #fff;
+         border: none;
+         text-transform: capitalize;
+         color: #2f2d52;
+         font-size: 16px;
+         img {
+            margin-right: 15px;
+            width: 20px;
+         }
+      }
+      .switcher {
+         margin-bottom: 0;
+         margin-top: 15px;
+         .link {
+            color: #2f2d52;
+         }
+      }
+      .divider {
+         color: #666;
+         text-align: center;
+         font-size: 14px;
+         position: relative;
+         z-index: 1;
+         margin-bottom: 20px;
+         &:before {
+            content: " ";
+            background: #e5e5e5;
+            position: absolute;
+            height: 1px;
+            width: 100%;
+            top: 11px;
+            left: 0;
+            z-index: -1;
+         }
+         span {
+            background: #fff;
+            padding: 0 10px;
+         }
+      }
+   }
+   .success-alert,
+   .failure-alert {
+      background: #e6f7e7;
+      color: #77d77f;
+      max-width: 500px;
+      height: 50px;
+      border-radius: 3px;
+      padding: 14px;
+      text-align: center;
+      margin: auto;
+      margin-bottom: 20px;
+   }
+   .failure-alert {
+      background: #fce4e0;
+      color: #ff4500;
+   }
+   .pre-loader {
+      margin-top: 15px;
+   }
+}
