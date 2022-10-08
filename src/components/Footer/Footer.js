@@ -9,9 +9,9 @@ const Footer = () => {
          <div className="container">
             <div className="row">
                <div className="col-sm-6 col-lg-3">
-                  <h3 className="logo mb-3">cronosLearn</h3>
+                  <h3 className="logo mb-3">cronoslearn</h3>
                   <p>
-                     cronosLearn is a platform where developers can learn how to build on the cornos chain and get rewarded at the same time
+                     cronoslearn is a platform where developers can learn how to build on the cornos chain and get rewarded at the same time
                   </p>
                </div>
                <div className="col-sm-6 col-lg-3">

@@ -10,7 +10,7 @@ const CoursePage = () => {
          <div className="container">
             <div className="header-text text-center mb-5">
                <h3>Popular Courses</h3>
-               <p>Discover Your Perfect Program In Our Courses.</p>
+               <p>Get started with your development journey on cronos.</p>
             </div>
             <div className="row">
                {courses.map((course) => (

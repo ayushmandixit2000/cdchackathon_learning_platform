@@ -13,14 +13,14 @@ const GetApp = () => {
             </div>
             <div className="app-box text-center">
                <a
-                  href="https://play.google.com/store/apps"
+                  href="https://play.google.com/store/apps/details?id=co.mona.android&hl=en_SG&gl=US"
                   target="_blank"
                   rel="noopener noreferrer"
                >
                   <img src={android} alt="" />
                </a>
                <a
-                  href="https://www.apple.com/app-store/"
+                  href="https://apps.apple.com/sg/app/crypto-com-buy-bitcoin-ether/id1262148500"
                   target="_blank"
                   rel="noopener noreferrer"
                >
