@@ -10,25 +10,26 @@ import {
    faCertificate,
 } from "@fortawesome/free-solid-svg-icons";
 import "./CourseDetails.scss";
-import useCourses from "../../hooks/useCourses";
+// import useCourses from "../../hooks/useCourses";
+import courses from "../../courseData/courseData.json"
 import { useParams } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
 const CourseDetails = () => {
-   const [courses] = useCourses();
-   const [details, setDetails] = useState({});
+   // const [courses] = useCourses();
+   // const [details, setDetails] = useState({});
    const { handleSubmit, reset } = useForm();
    const { courseId } = useParams();
    const { user } = useAuth();
    const history = useHistory();
 
-   useEffect(() => {
-      if (courses.length) {
-         const matchedData = courses.find((course) => course._id === courseId);
-         setDetails(matchedData);
-      }
-   }, [courses]);
+   // useEffect(() => {
+   //    if (courses.length) {
+   //       const matchedData = courses.find((course) => course._id === courseId);
+   //       setDetails(matchedData);
+   //    }
+   // }, [courses,courseId]);
 
    const {
       title,
@@ -43,7 +44,7 @@ const CourseDetails = () => {
       instructor,
       instructorImage,
       language,
-   } = details;
+   } = courses[courseId];
 
    const onSubmit = (data) => {
       data.image = image;
