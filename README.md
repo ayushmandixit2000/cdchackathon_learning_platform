@@ -20,7 +20,7 @@ The live site can be found at https://cdchackathon-cronoslearn.vercel.app
 On the webapp users are able to authenticate with their web3 wallets and mint NFTs, both on the cronos chain. This is done via the Moralis SDK
 
 ## NFT Minting
-Developers are able to mint NFTs on the cronos chain upon finishing their projects. 
+Developers are able to mint NFTs on the cronos chain upon finishing their projects. To mint in the MVP, go to the course page and click on a course. Connect your wallet in the top right. Get some test cronos in your wallet and mint once! For our prototype, we have limited minting to one NFT per wallet
 
 ## Project Description
 cronoslearn is a platform for crypto.com where developers can learn & earn. The webapp aims to incetivise developers to build projects by providing them with the appropriate resources to learn and incentivisng them to build on the chain through rewards. Rewards include ERC-721 NFTs and CRO tokens which will be credited to their web3 wallet
