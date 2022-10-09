@@ -13,6 +13,9 @@ const DevCom = () => {
             <h2>Welcome to Developer community</h2>
             <h5>Ask relevant questions here and be an active member of the community to further your own growth as a developer</h5>
          </div>   
+         <button type="button" class = "special_button">
+               Add Post!
+            </button>
          <div class="parent">
                <div class="authors">
                   <div class="username"><u>User1298245512</u></div>
@@ -90,7 +93,7 @@ const DevCom = () => {
                </div>
          </div>
          <hr></hr>
-         <iframe src="https://cronos.org/community" width="100%" height="1000">
+         <iframe>
   <p>Your browser does not support iframes.</p>
 </iframe>
       </div>
