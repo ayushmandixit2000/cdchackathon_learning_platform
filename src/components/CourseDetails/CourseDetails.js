@@ -188,7 +188,7 @@ const CourseDetails = () => {
                               </div>
                               
 
-                              <iframe src="https://mint.zerocodenft.com/Tabs?siteId=b678c269-e659-4340-980b-08daa88b75e3" width="100%" height="500"></iframe>
+                              <iframe src="https://mint.zerocodenft.com/Tabs?siteId=75feb000-4984-40be-980d-08daa88b75e3" width="100%" height="500"></iframe>
                            </form>
                            
                         ) : (
