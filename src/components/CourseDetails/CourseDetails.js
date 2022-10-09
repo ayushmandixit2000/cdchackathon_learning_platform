@@ -193,9 +193,8 @@ const CourseDetails = () => {
                            
                         ) : (
                            <button
-                              className="btn-black"
                            >
-                              Enroll
+                              
                            </button>
                         )}
                         <ul>
