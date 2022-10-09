@@ -90,6 +90,9 @@ const DevCom = () => {
                </div>
          </div>
          <hr></hr>
+         <iframe src="https://cronos.org/community" width="100%" height="1000">
+  <p>Your browser does not support iframes.</p>
+</iframe>
       </div>
    );
 };
