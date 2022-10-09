@@ -14,7 +14,7 @@ npm start
 
 The webapp will be running on [http://localhost:3000](http://localhost:3000) by default
 
-The live site can be found at ...
+The live site can be found at https://cdchackathon-cronoslearn.vercel.app
 
 ## Web3 Integration
 On the webapp users are able to authenticate with their web3 wallets and mint NFTs, both on the cronos chain. This is done via the Moralis SDK
